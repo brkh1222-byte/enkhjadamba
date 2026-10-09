@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cake Bakery · Enkh Jadamba</title>
+  <meta name="description" content="Cakes baked by Enkh Jadamba, a favourite recipe, and the math of baking.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=JetBrains+Mono:wght@500;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>π</text></svg>">
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html">Enkh<span>.</span>J</a>
+      <ul>
+        <li><a class="link" href="index.html"><span class="sym">∅</span>Home</a></li>
+        <li><a class="link" href="math.html"><span class="sym">∑</span>Math</a></li>
+        <li><a class="link" href="english.html"><span class="sym">Aa</span>Grammar</a></li>
+        <li><a class="link" href="bakery.html" aria-current="page"><span class="sym">π</span>Bakery</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="wrap">
+      <div class="tag">// π r² = how much cake you get</div>
+      <h1>Enkh's Cake Bakery</h1>
+      <p>Baking is math you can eat: fractions, ratios, temperatures and timing.
+         Here are cakes I've made. Click a photo to see it bigger.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <div class="section-title"><span class="num">§1</span><h2>Gallery</h2></div>
+      <div class="filters" id="filters" role="group" aria-label="Filter cakes"></div>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <section>
+      <div class="section-title"><span class="num">§2</span><h2>My favourite recipe</h2></div>
+      <div class="card recipe">
+        <h3>Classic vanilla sponge</h3>
+        <p>The secret ratio: <span class="math ratio">butter : sugar : flour : eggs = 1 : 1 : 1 : 1</span> by weight.
+           Change the number of cakes and the amounts update.</p>
+        <p>
+          <strong>Number of cakes:</strong>
+          <button class="btn small" type="button" data-step="-0.5" aria-label="Fewer">−</button>
+          <span class="math" id="scale">1</span>
+          <button class="btn small" type="button" data-step="0.5" aria-label="More">+</button>
+        </p>
+        <div class="table-scroll">
+          <table id="ingredients">
+            <tr><th>Ingredient</th><th>Amount</th></tr>
+            <tr data-amount="200" data-unit="g"><td>Butter (soft)</td><td></td></tr>
+            <tr data-amount="200" data-unit="g"><td>Sugar</td><td></td></tr>
+            <tr data-amount="200" data-unit="g"><td>Self-raising flour</td><td></td></tr>
+            <tr data-amount="4" data-unit=""><td>Eggs</td><td></td></tr>
+            <tr data-amount="1" data-unit=" tsp"><td>Vanilla extract</td><td></td></tr>
+            <tr data-amount="2" data-unit=" tbsp"><td>Milk</td><td></td></tr>
+          </table>
+        </div>
+        <ol>
+          <li>Heat the oven to 180 °C and line two 20 cm round tins. <em>(Ask a grown-up to help with the oven!)</em></li>
+          <li>Beat butter and sugar until pale and fluffy.</li>
+          <li>Add the eggs one at a time, then the vanilla.</li>
+          <li>Fold in the flour, then the milk.</li>
+          <li>Split evenly between the tins (weigh them for a perfect 50% each).</li>
+          <li>Bake 20–25 minutes, until a skewer comes out clean. Cool, then fill with jam and cream.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title"><span class="num">§3</span><h2>Math in the kitchen</h2></div>
+      <div class="grid">
+        <div class="card">
+          <h3>Bigger tin, more cake</h3>
+          <p>Area of a round tin is <span class="math">π r²</span>. A 24 cm tin vs a 20 cm tin:
+             <span class="math">(12/10)² = 1.44</span>, so you need about <strong>44% more</strong> batter, not 20%.</p>
+        </div>
+        <div class="card">
+          <h3>8 slices, 3 cuts</h3>
+          <p>Cut a round cake into 8 equal pieces with only 3 straight cuts?
+             Two cuts across the top make 4 quarters, then one cut sideways through the middle splits each quarter into a top and bottom layer.
+             <span class="math">4 × 2 = 8</span>.</p>
+        </div>
+        <div class="card">
+          <h3>Fractions everywhere</h3>
+          <p>Half a recipe of <span class="math">¾</span> cup sugar is <span class="math">¾ × ½ = ⅜</span> cup.
+             Measuring cups are a fraction workout!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Cake photo">
+    <button class="btn close" type="button" id="lightbox-close">✕ Close</button>
+    <figure>
+      <img id="lightbox-img" alt="">
+      <figcaption>
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-text"></p>
+      </figcaption>
+    </figure>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      Made with <span class="math">∞</span> curiosity by Enkh Jadamba · <span class="math" id="year"></span>
+    </div>
+  </footer>
+
+  <script src="js/cakes.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

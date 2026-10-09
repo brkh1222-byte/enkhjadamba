@@ -1,0 +1,345 @@
+/* ============================================
+   Enkh Jadamba — math-themed personal site
+   ============================================ */
+
+:root {
+  --paper: #fdfbf5;
+  --grid: #dfe8f3;
+  --grid-strong: #c6d5e8;
+  --ink: #1f2a44;
+  --ink-soft: #55607a;
+  --blue: #2f6fde;
+  --pink: #e8578f;
+  --orange: #f29a2e;
+  --green: #2fa36b;
+  --card: #ffffff;
+  --border: #1f2a44;
+  --shadow: 4px 4px 0 var(--border);
+  --radius: 14px;
+  --font-body: "Nunito", system-ui, sans-serif;
+  --font-head: "Fredoka", "Nunito", system-ui, sans-serif;
+  --font-math: "JetBrains Mono", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  background-color: var(--paper);
+  /* graph paper */
+  background-image:
+    linear-gradient(var(--grid-strong) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-strong) 1px, transparent 1px),
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+}
+
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; margin: 0 0 .5em; }
+h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); }
+h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+h3 { font-size: 1.25rem; }
+
+a { color: var(--blue); }
+
+code, .math {
+  font-family: var(--font-math);
+  font-size: .92em;
+  background: #eef3fb;
+  padding: .1em .35em;
+  border-radius: 6px;
+}
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+/* ---------- Nav ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(253, 251, 245, .92);
+  backdrop-filter: blur(6px);
+  border-bottom: 2px solid var(--border);
+}
+.nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 64px;
+  flex-wrap: wrap;
+}
+.logo {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.logo span { color: var(--pink); }
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 6px;
+  margin: 0;
+  padding: 8px 0;
+  flex-wrap: wrap;
+}
+.nav a.link {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid transparent;
+}
+.nav a.link:hover { border-color: var(--border); }
+.nav a.link[aria-current="page"] { background: var(--ink); color: var(--paper); }
+.nav .sym { font-family: var(--font-math); margin-right: 4px; }
+
+/* ---------- Hero ---------- */
+.hero { padding: 64px 0 40px; position: relative; }
+.hero .equation {
+  font-family: var(--font-math);
+  font-size: clamp(1rem, 3vw, 1.35rem);
+  background: var(--card);
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 12px 18px;
+  display: inline-block;
+  margin: 8px 0 20px;
+}
+.hero .equation .m { color: var(--blue); }
+.hero .equation .e { color: var(--green); }
+.hero .equation .c { color: var(--pink); }
+.hero p.lead { font-size: 1.15rem; max-width: 620px; color: var(--ink-soft); }
+
+.page-hero { padding: 48px 0 24px; }
+.page-hero .tag {
+  font-family: var(--font-math);
+  color: var(--ink-soft);
+  font-size: .95rem;
+}
+
+/* floating symbols */
+.floaters { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: -1; }
+.floaters span {
+  position: absolute;
+  font-family: var(--font-math);
+  color: var(--grid-strong);
+  font-size: 3rem;
+  animation: float 9s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(8deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .floaters span { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Cards ---------- */
+.grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+.card {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+a.card { color: inherit; text-decoration: none; transition: transform .15s, box-shadow .15s; display: block; }
+a.card:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--border); }
+.card .big {
+  font-family: var(--font-math);
+  font-size: 2.4rem;
+  line-height: 1;
+  display: inline-grid;
+  place-items: center;
+  width: 64px; height: 64px;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  margin-bottom: 14px;
+}
+.card.c-math .big { background: #dce8ff; color: var(--blue); }
+.card.c-eng .big { background: #d9f4e6; color: var(--green); }
+.card.c-cake .big { background: #ffe0ec; color: var(--pink); }
+.card p { margin: 0; color: var(--ink-soft); }
+
+section { padding: 28px 0; }
+.section-title { display: flex; align-items: baseline; gap: 12px; }
+.section-title .num { font-family: var(--font-math); color: var(--pink); font-size: 1rem; }
+
+/* ---------- Fact box ---------- */
+.fact {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: #fff7e8;
+}
+.fact .big { background: #ffe9c7; color: var(--orange); flex-shrink: 0; margin: 0; }
+.fact button { margin-left: auto; flex-shrink: 0; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  background: var(--card);
+  color: var(--ink);
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 16px;
+  box-shadow: 2px 2px 0 var(--border);
+}
+.btn:hover { background: var(--ink); color: var(--paper); }
+.btn:active { transform: translate(2px, 2px); box-shadow: none; }
+.btn.small { padding: 4px 12px; font-size: .9rem; }
+
+/* ---------- Topic chips / TOC ---------- */
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 8px; }
+.toc a {
+  font-weight: 700;
+  font-size: .95rem;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+.toc a:hover { background: var(--ink); color: var(--paper); }
+
+/* ---------- Lessons (math + grammar) ---------- */
+.lesson { margin-bottom: 28px; scroll-margin-top: 90px; }
+.lesson h2 { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.lesson h2 .chip {
+  font-family: var(--font-math);
+  font-size: .85rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 8px;
+  padding: 2px 8px;
+}
+.lesson .key {
+  border-left: 5px solid var(--blue);
+  background: #eef3fb;
+  padding: 10px 14px;
+  border-radius: 0 10px 10px 0;
+  margin: 12px 0;
+}
+.eng-page .lesson .key { border-color: var(--green); background: #e9f7ef; }
+.lesson ul { padding-left: 1.2em; }
+.lesson li { margin: 4px 0; }
+
+.problem {
+  border: 2px dashed var(--ink-soft);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-top: 14px;
+}
+.problem .label { font-weight: 800; color: var(--pink); }
+details { margin-top: 8px; }
+details summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--blue);
+  list-style: none;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▸ "; }
+details[open] summary::before { content: "▾ "; }
+details .answer { padding: 8px 0 0 18px; }
+
+/* tables */
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: .95rem; }
+th, td { border: 1.5px solid var(--grid-strong); padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: #eef3fb; }
+.eng-page th { background: #e9f7ef; }
+.good { color: var(--green); font-weight: 700; }
+.bad { color: #c8364a; font-weight: 700; text-decoration: line-through; }
+
+/* ---------- Quiz ---------- */
+.quiz-q { margin: 14px 0; }
+.quiz-q p { margin: 0 0 6px; font-weight: 700; }
+.quiz-q .opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.quiz-q .opts button.right { background: var(--green); color: #fff; border-color: var(--green); }
+.quiz-q .opts button.wrong { background: #c8364a; color: #fff; border-color: #c8364a; }
+.score { font-family: var(--font-math); font-weight: 700; margin-top: 10px; }
+
+/* ---------- Bakery ---------- */
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 20px; }
+.filters .btn.active { background: var(--pink); color: #fff; border-color: var(--border); }
+
+.gallery {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+.cake-card { padding: 0; overflow: hidden; cursor: zoom-in; text-align: left; font: inherit; color: inherit; }
+.cake-card .photo {
+  aspect-ratio: 1 / 1;
+  background: #ffe0ec;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-bottom: 2px solid var(--border);
+}
+.cake-card .info { padding: 12px 14px 14px; }
+.cake-card h3 { margin: 0 0 2px; font-size: 1.1rem; }
+.cake-card .meta { font-family: var(--font-math); font-size: .82rem; color: var(--ink-soft); }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 26, 44, .85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 50;
+}
+.lightbox.open { display: flex; }
+.lightbox figure {
+  margin: 0;
+  max-width: 720px;
+  width: 100%;
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.lightbox img { width: 100%; max-height: 70vh; object-fit: contain; display: block; background: #ffe0ec; }
+.lightbox figcaption { padding: 14px 18px; }
+.lightbox .close { position: absolute; top: 16px; right: 16px; }
+
+.recipe ol { padding-left: 1.3em; }
+.recipe .ratio { font-family: var(--font-math); }
+
+/* ---------- Footer ---------- */
+footer {
+  border-top: 2px solid var(--border);
+  margin-top: 48px;
+  padding: 24px 0;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: .95rem;
+  background: rgba(253, 251, 245, .9);
+}
+footer .math { background: none; }
+
+@media (max-width: 560px) {
+  .fact { flex-wrap: wrap; }
+  .fact button { margin-left: 0; }
+  .nav .wrap { justify-content: center; }
+}

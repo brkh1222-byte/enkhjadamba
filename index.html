@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enkh Jadamba</title>
+  <meta name="description" content="Enkh Jadamba's corner of the internet: olympiad math, English grammar notes, and cakes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=JetBrains+Mono:wght@500;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>π</text></svg>">
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html">Enkh<span>.</span>J</a>
+      <ul>
+        <li><a class="link" href="index.html" aria-current="page"><span class="sym">∅</span>Home</a></li>
+        <li><a class="link" href="math.html"><span class="sym">∑</span>Math</a></li>
+        <li><a class="link" href="english.html"><span class="sym">Aa</span>Grammar</a></li>
+        <li><a class="link" href="bakery.html"><span class="sym">π</span>Bakery</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="floaters" aria-hidden="true">
+      <span style="top:10%;left:70%">π</span>
+      <span style="top:55%;left:85%;animation-delay:-2s">∞</span>
+      <span style="top:20%;left:90%;animation-delay:-4s">√</span>
+      <span style="top:70%;left:62%;animation-delay:-6s">∑</span>
+      <span style="top:40%;left:76%;animation-delay:-3s">÷</span>
+    </div>
+    <div class="wrap">
+      <h1>Hi, I'm Enkh Jadamba!</h1>
+      <div class="equation">
+        Enkh = <span class="m">math</span> + <span class="e">English</span> + <span class="c">cake</span><sup>2</sup>
+      </div>
+      <p class="lead">
+        I'm a primary school student who loves solving olympiad problems,
+        learning how English works, and baking cakes. This site is my notebook,
+        and you can use it to learn too!
+      </p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <div class="section-title"><span class="num">§1</span><h2>Pick a topic</h2></div>
+      <div class="grid">
+        <a class="card c-math" href="math.html">
+          <div class="big">∑</div>
+          <h3>Olympiad Math</h3>
+          <p>Short notes on parity, divisibility, pigeonholes, counting and more, each with a practice problem.</p>
+        </a>
+        <a class="card c-eng" href="english.html">
+          <div class="big">Aa</div>
+          <h3>English Grammar</h3>
+          <p>Brief, clear grammar notes: tenses, articles, commas and common mistakes, plus a quiz.</p>
+        </a>
+        <a class="card c-cake" href="bakery.html">
+          <div class="big">π</div>
+          <h3>Cake Bakery</h3>
+          <p>Photos of cakes I've baked, my favourite recipe, and the math hiding inside baking.</p>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title"><span class="num">§2</span><h2>Fun fact generator</h2></div>
+      <div class="card fact">
+        <div class="big">!</div>
+        <p id="fact-text">Loading a fun fact…</p>
+        <button class="btn small" id="fact-btn" type="button">Next fact</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      Made with <span class="math">∞</span> curiosity by Enkh Jadamba · <span class="math" id="year"></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
