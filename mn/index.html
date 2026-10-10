@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ж. Энх</title>
+  <meta name="description" content="Ж. Энх: олимпиадын математик, англи хэлний дүрэм, бялуу жигнэх.">
+  <meta name="theme-color" content="#f8fafd">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="alternate" hreflang="en" href="../index.html">
+</head>
+<body class="page-home">
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="logo">ЖЭ</span>Ж. Энх</a>
+      <div class="nav-right">
+        <nav class="links" aria-label="Үндсэн цэс">
+          <a href="index.html" aria-current="page">Нүүр</a>
+          <a href="math.html">Математик</a>
+          <a href="english.html">Англи хэл</a>
+          <a href="bakery.html">Бялуу</a>
+        </nav>
+        <a class="lang" href="../index.html" hreflang="en" lang="en" title="Read in English">EN <b>English</b></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-copy">
+          <span class="pill"><span class="dot"></span>Бага ангийн сурагч · Математикийн олимпиад</span>
+          <h1>Сайн уу, намайг <span class="underline">Энх<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M2 7 C 25 2, 50 2, 98 5"/></svg></span> гэдэг</h1>
+          <p class="lede">
+            Би олимпиадын бодлого бодох, англи хэл хэрхэн бүтдэгийг судлах, бялуу жигнэх дуртай.
+            Энэ бол миний тэмдэглэлийн дэвтэр. Та ч гэсэн эндээс суралцаж болно.
+          </p>
+          <div class="actions">
+            <a class="btn accent" href="math.html">Математикаас эхлэх →</a>
+            <a class="btn ghost" href="english.html">Англи хэлний дүрэм</a>
+          </div>
+          <div class="stats">
+            <div><b>11</b><span>математикийн сэдэв</span></div>
+            <div><b>9</b><span>дүрмийн тэмдэглэл</span></div>
+            <div><b>1</b><span>дуртай бялуу</span></div>
+          </div>
+        </div>
+
+        <figure class="playground" aria-labelledby="tri-cap">
+          <div class="bar"><span>гурвалжин.svg</span><i>оройг нь чирээрэй ↔</i></div>
+          <svg id="tri" viewBox="0 0 400 360" role="img" aria-describedby="tri-cap">
+            <g class="grid" aria-hidden="true"></g>
+            <circle class="circle" cx="200" cy="180" r="150" pathLength="1"/>
+            <g class="arcs" aria-hidden="true"></g>
+            <polygon class="shape" points=""/>
+            <g class="handles"></g>
+          </svg>
+          <figcaption id="tri-cap">
+            <div class="readout" aria-live="polite"></div>
+            <p class="hint">Аль ч оройг нь хөдөлгөөд үзээрэй: гурван өнцгийн нийлбэр үргэлж 180° байна.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="block" id="about">
+      <div class="wrap">
+        <span class="label">01 · миний тухай</span>
+        <h2>Сониуч хүмүүст зориулсан дэвтэр</h2>
+        <div class="about">
+          <div>
+            <p>Сайн уу, намайг Энх гэдэг. Хэцүү бодлого гэнэт ойлгогдох тэр мөч надад хамгийн их
+              таалагддаг. Би олимпиадын математикаар хичээллэж, дүрмээ мартахгүйн тулд англи хэлний
+              товч тэмдэглэл бичдэг. Бас бялуу жигнэдэг. Жигнэх ажил ч гэсэн бутархай, харьцаагаар дүүрэн байдаг.</p>
+            <p>Энд байгаа бүх зүйлийг товч бөгөөд ойлгомжтой бичсэн. Ижил зүйл сурч байгаа хэн бүхэнд
+              хэрэг болно гэж найдаж байна.</p>
+          </div>
+          <dl class="defs">
+            <div><dt>Математикийн түвшин</dt><dd>Дунд ангийн олимпиад</dd></div>
+            <div><dt>Дасгал бодлого</dt><dd>12, хариу нь нуугдсан</dd></div>
+            <div><dt>Дүрмийн сорил</dt><dd>8 асуулт</dd></div>
+            <div><dt>Жорын харьцаа</dt><dd>1 : 1 : 1 : 1</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="explore">
+      <div class="wrap">
+        <span class="label">02 · хаанаас эхлэх вэ</span>
+        <h2>Сэдвээ сонгоорой</h2>
+        <div class="cards">
+          <a class="card math" href="math.html">
+            <span class="icon">a²+b²</span>
+            <h3>Олимпиадын математик</h3>
+            <p>Тэгш ба сондгой, хуваагдах шинж, Дирихлегийн зарчим, тоолох бодлого гэх мэт. Сэдэв бүрт бодож үзэх бодлого бий.</p>
+            <span class="go">Тэмдэглэл нээх</span>
+          </a>
+          <a class="card english" href="english.html">
+            <span class="icon">Aa</span>
+            <h3>Англи хэлний дүрэм</h3>
+            <p>Цаг, артикль, таслал, андуурдаг үгс. Монгол хэлтэй харьцуулсан товч тайлбар, төгсгөлд нь сорил.</p>
+            <span class="go">Тэмдэглэл нээх</span>
+          </a>
+          <a class="card bakery" href="bakery.html">
+            <span class="icon">πr²</span>
+            <h3>Бялуу</h3>
+            <p>Хэмжээ нь өөрчлөгддөг миний дуртай жор, мөн жигнэх ажилд нуугдсан математик.</p>
+            <span class="go">Бялууны хуудас</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="potd">
+      <div class="wrap">
+        <span class="label">03 · өнөөдөр</span>
+        <h2>Өдрийн бодлого</h2>
+        <div class="potd">
+          <div class="day"><span><b id="potd-day">1</b><span id="potd-month">1-р сар</span></span></div>
+          <div>
+            <p class="topic" id="potd-topic"></p>
+            <h3 id="potd-q"></h3>
+            <details>
+              <summary>Хариуг харах</summary>
+              <div class="answer" id="potd-a"></div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span class="qed"><b>∎</b> Ж. Энх · <span id="yr">2026</span></span>
+      <nav aria-label="Доод цэс">
+        <a href="math.html">Математик</a>
+        <a href="english.html">Англи хэл</a>
+        <a href="bakery.html">Бялуу</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

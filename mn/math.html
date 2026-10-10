@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Олимпиадын математик · Ж. Энх</title>
+  <meta name="description" content="Дунд ангийн олимпиадын математикийн товч тэмдэглэл, дасгал бодлоготой.">
+  <meta name="theme-color" content="#f8fafd">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="alternate" hreflang="en" href="../math.html">
+</head>
+<body class="page-math">
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="logo">ЖЭ</span>Ж. Энх</a>
+      <div class="nav-right">
+        <nav class="links" aria-label="Үндсэн цэс">
+          <a href="index.html">Нүүр</a>
+          <a href="math.html" aria-current="page">Математик</a>
+          <a href="english.html">Англи хэл</a>
+          <a href="bakery.html">Бялуу</a>
+        </nav>
+        <a class="lang" href="../math.html" hreflang="en" lang="en" title="Read in English">EN <b>English</b></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="pill"><span class="dot"></span>Тэмдэглэл · дунд ангийн олимпиадын түвшин</span>
+        <h1>Олимпиадын <span>математик</span></h1>
+        <p class="lede">Математикийн олимпиадад дахин дахин гардаг гол санаанууд. Гол санааг уншаад, бодлогыг бодож үзээд, <em>дараа нь</em> хариуг нээгээрэй.</p>
+      </div>
+    </section>
+
+    <div class="wrap doc">
+      <aside class="side" aria-label="Сэдвүүд">
+        <ol>
+          <li><a href="#strategy"><span class="n">00</span>Бодох арга</a></li>
+          <li><a href="#parity"><span class="n">01</span>Тэгш ба сондгой</a></li>
+          <li><a href="#divisibility"><span class="n">02</span>Хуваагдах шинж</a></li>
+          <li><a href="#gcd"><span class="n">03</span>ХИЕХ ба ХБЕХ</a></li>
+          <li><a href="#remainders"><span class="n">04</span>Үлдэгдэл</a></li>
+          <li><a href="#last-digit"><span class="n">05</span>Сүүлийн цифр</a></li>
+          <li><a href="#pigeonhole"><span class="n">06</span>Дирихлегийн зарчим</a></li>
+          <li><a href="#counting"><span class="n">07</span>Тоолох</a></li>
+          <li><a href="#sums"><span class="n">08</span>Ухаалаг нийлбэр</a></li>
+          <li><a href="#invariants"><span class="n">09</span>Инвариант</a></li>
+          <li><a href="#backwards"><span class="n">10</span>Ухрааж бодох</a></li>
+          <li><a href="#angles"><span class="n">11</span>Өнцөг</a></li>
+        </ol>
+        <button class="btn small accent" id="random-problem" type="button">Санамсаргүй бодлого ↻</button>
+      </aside>
+      <div class="content">
+        <section class="lesson" id="strategy">
+          <h2><span class="num">00</span>Бодлогыг хэрхэн бодох вэ</h2>
+          <ol>
+            <li><strong>Хоёр удаа унш.</strong> Юу өгөгдсөн, юуг олохыг доогуур нь зур.</li>
+            <li><strong>Жижиг тохиолдлоор туршиж үз.</strong> Бодлогод 100 гэж байвал эхлээд 1, 2, 3, 4-өөр туршаад зүй тогтол хай.</li>
+            <li><strong>Зураг зур</strong> эсвэл хүснэгт хий.</li>
+            <li><strong>Аль арга тохирохыг бод.</strong> Тэгш, сондгой юу? Үлдэгдэл үү? Дирихлегийн зарчим уу? Тоолох уу?</li>
+            <li><strong>Хариугаа шалга.</strong> Олсон хариугаа бодлогод буцааж орлуулаад үз.</li>
+          </ol>
+        </section>
+
+        <section class="lesson" id="parity">
+          <h2><span class="num">01</span>Тэгш ба сондгой тоо</h2>
+          <div class="key">
+            <span class="m">тэгш ± тэгш = тэгш</span> ·
+            <span class="m">сондгой ± сондгой = тэгш</span> ·
+            <span class="m">тэгш ± сондгой = сондгой</span><br>
+            Нийлбэрт сондгой нэмэгдэхүүн <strong>сондгой тоогоор</strong> орсон үед л нийлбэр сондгой байна.
+          </div>
+          <p>Ямар нэг зүйл <em>боломжгүй</em> гэдгийг батлахад тэгш, сондгойн шинж маш их тус болдог.</p>
+          <div class="problem">
+            <span class="label">Бодлого.</span> Нийлбэр нь 50 байх 5 сондгой тоо сонгож болох уу?
+            <details><summary>Хариуг харах</summary>
+              <div class="answer">Үгүй. Таван сондгой нэмэгдэхүүн буюу сондгой тооны сондгой нэмэгдэхүүнтэй тул нийлбэр нь сондгой гарна. Харин 50 тэгш тоо.</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="lesson" id="divisibility">
+          <h2><span class="num">02</span>Хуваагдах шинжүүд</h2>
+          <div class="table-scroll">
+            <table>
+              <tr><th>Хуваагч</th><th>Шинж</th></tr>
+              <tr><td>2</td><td>сүүлийн цифр нь тэгш</td></tr>
+              <tr><td>3</td><td>цифрүүдийн нийлбэр нь 3-т хуваагдана</td></tr>
+              <tr><td>4</td><td>сүүлийн хоёр цифрээс тогтох тоо 4-т хуваагдана</td></tr>
+              <tr><td>5</td><td>сүүлийн цифр нь 0 эсвэл 5</td></tr>
+              <tr><td>6</td><td>2-т <strong>болон</strong> 3-т зэрэг хуваагдана</td></tr>
+              <tr><td>8</td><td>сүүлийн гурван цифрээс тогтох тоо 8-д хуваагдана</td></tr>
+              <tr><td>9</td><td>цифрүүдийн нийлбэр нь 9-д хуваагдана</td></tr>
+              <tr><td>10</td><td>сүүлийн цифр нь 0</td></tr>
+              <tr><td>11</td><td>цифрүүдийг ээлжлэн нэмж, хасахад (+ − + − …) гарах тоо 11-т хуваагдана</td></tr>
+            </table>
+          </div>
+          <div class="problem">
+            <span class="label">Бодлого.</span> <span class="m">4A72</span> тоо 9-д хуваагдахын тулд <span class="m">A</span> цифр ямар байх вэ?
+            <details><summary>Хариуг харах</summary>
+              <div class="answer"><span class="m">4 + A + 7 + 2 = 13 + A</span> нь 9-д хуваагдах ёстой тул <span class="m">A = 5</span>. Шалгалт: <span class="m">4572 = 9 × 508</span>. ✓</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="lesson" id="gcd">
+          <h2><span class="num">03</span>Анхны тоо, ХИЕХ ба ХБЕХ</h2>
+          <div class="key">
+            1-ээс их натурал тоо бүрийг анхны тоонуудын үржвэрт <strong>ганцхан</strong> аргаар задална: <span class="m">60 = 2² × 3 × 5</span>.<br>
+            <strong>ХИЕХ</strong> (хамгийн их ерөнхий хуваагч) нь хоёр тоог хоёуланг нь хуваах хамгийн их тоо.<br>
+            <strong>ХБЕХ</strong> (хамгийн бага ерөнхий хуваагдагч) нь хоёр тоонд хоёуланд нь хуваагдах хамгийн бага тоо.<br>
+            <span class="m">ХИЕХ(a, b) × ХБЕХ(a, b) = a × b</span>
+          </div>
+          <p>«Тэнцүү бүлгүүдэд хуваах» бодлогод <strong>ХИЕХ</strong>, «хэзээ дахин давхцах вэ» гэсэн бодлогод <strong>ХБЕХ</strong> хэрэглэнэ.</p>
+          <div class="problem">
+            <span class="label">Бодлого.</span> А автобус 12 минут тутам, Б автобус 18 минут тутам хөдөлдөг. Хоёулаа 8:00-д хөдөлсөн бол дараа нь хэдэн цагт хамт хөдлөх вэ?
+            <details><summary>Хариуг харах</summary>
+              <div class="answer"><span class="m">12 = 2²·3</span>, <span class="m">18 = 2·3²</span> тул <span class="m">ХБЕХ = 2²·3² = 36</span>. Тэд <strong>8:36</strong>-д дахин хамт хөдөлнө.</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="lesson" id="remainders">
+          <h2><span class="num">04</span>Үлдэгдэл (модулиар жиших)</h2>
+          <div class="key">
+            <span class="m">a ≡ b (mod n)</span> гэдэг нь a ба b-г n-д хуваахад ижил үлдэгдэл гарна гэсэн үг.<br>
+            Асар том тоонуудын оронд тэдгээрийн үлдэгдлийг нэмж, хасаж, үржүүлж болно.
+          </div>
+          <p>Заль: <span class="m">n − 1</span> үлдэгдлийг <span class="m">−1</span> гэж үзвэл бодлого заримдаа хялбар болдог.</p>
+          <div class="problem">
+            <span class="label">Бодлого.</span> <span class="m">2¹⁰⁰</span>-г 3-т хуваахад ямар үлдэгдэл гарах вэ?
+            <details><summary>Хариуг харах</summary>
+              <div class="answer"><span class="m">2 ≡ −1 (mod 3)</span> тул <span class="m">2¹⁰⁰ ≡ (−1)¹⁰⁰ = 1</span>. Үлдэгдэл нь <strong>1</strong>.</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="lesson" id="last-digit">
+          <h2><span class="num">05</span>Сүүлийн цифрийн зүй тогтол</h2>
+          <div class="key">
+            Зэргийн сүүлийн цифрүүд богино мөчлөгөөр давтагддаг:<br>
+            <span class="m">2 → 2, 4, 8, 6</span> · <span class="m">3 → 3, 9, 7, 1</span> · <span class="m">7 → 7, 9, 3, 1</span> · <span class="m">8 → 8, 4, 2, 6</span><br>
+            Мөчлөгийн аль байрлалд байгааг зэргийн илтгэгчийг мөчлөгийн уртад хуваасан үлдэгдлээр олно.
+          </div>
+          <div class="problem">
+            <span class="label">Бодлого.</span> <span class="m">7²⁰²⁶</span>-ийн сүүлийн цифр хэд вэ?
+            <details><summary>Хариуг харах</summary>
+              <div class="answer">7, 9, 3, 1 мөчлөгийн урт нь 4. <span class="m">2026 = 4 × 506 + 2</span> тул 2-р байрлал буюу сүүлийн цифр нь <strong>9</strong>.</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="lesson" id="pigeonhole">
+          <h2><span class="num">06</span>Дирихлегийн зарчим</h2>
+          <div class="key">
+            <span class="m">n</span> торонд <span class="m">n</span>-ээс олон туулай хийвэл ядаж нэг торонд 2 буюу түүнээс олон туулай орно.
+          </div>
+          <p>Энэ зарчмыг англиар <em>pigeonhole principle</em> («тагтааны үүрний зарчим») гэдэг.
+            Жишээ нь: дурын 13 хүний дотор ижил сард төрсөн хоёр хүн заавал байна (13 хүн, 12 сар).</p>
+          <div class="problem">
+            <span class="label">Бодлого.</span> Харанхуй шүүгээнд улаан, цэнхэр, ногоон оймс байна. Ижил өнгийн хос гаргаж авна гэдэгтээ <em>итгэлтэй</em> байхын тулд хамгийн багадаа хэдэн оймс авах вэ?
+            <details><summary>Хариуг харах</summary>
+              <div class="answer"><strong>4.</strong> 3 оймс авахад өнгө бүрээс нэг нэг таарч магадгүй. Дөрөв дэх оймс тэдгээрийн аль нэгтэй нь заавал ижил өнгөтэй байна (3 өнгө = 3 тор).</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="lesson" id="counting">
+          <h2><span class="num">07</span>Тоолох бодлого</h2>
+          <div class="key">
+            <strong>Үржүүлэх дүрэм:</strong> 1-р алхам <span class="m">a</span> сонголттой, 2-р алхам <span class="m">b</span> сонголттой бол нийтдээ <span class="m">a × b</span> сонголт байна.<br>
+            <strong>Хос сонгох:</strong> <span class="m">n</span> зүйлээс 2-ыг сонгох аргын тоо <span class="m">n(n−1)/2</span>.
+          </div>
+          <div class="problem">
+            <span class="label">Бодлого 1.</span> Бүх цифр нь сондгой гурван оронтой тоо хэд байх вэ?
+            <details><summary>Хариуг харах</summary>
+              <div class="answer">Цифр бүр 5 сонголттой (1, 3, 5, 7, 9): <span class="m">5 × 5 × 5 = 125</span>.</div>
+            </details>
+          </div>
+          <div class="problem">
+            <span class="label">Бодлого 2.</span> 10 найз бие биетэйгээ нэг нэг удаа гар барьжээ. Нийт хэдэн удаа гар барьсан бэ?
+            <details><summary>Хариуг харах</summary>
+              <div class="answer"><span class="m">10 × 9 / 2 = 45</span>. (А–Б ба Б–А нь нэг ижил гар барилт тул 2-т хуваана.)</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="lesson" id="sums">
+          <h2><span class="num">08</span>Ухаалаг нийлбэр</h2>
+          <div class="key">
+            <strong>Гауссын арга:</strong> эхний ба сүүлийн гишүүнийг хосолно.
+            <span class="m">1 + 2 + … + n = n(n+1)/2</span><br>
+            Эхний <span class="m">n</span> сондгой тооны нийлбэр <span class="m">n²</span>-тай тэнцүү.
+          </div>
+          <p>Жишээ: <span class="m">1 + 2 + … + 100 = 100 × 101 / 2 = 5050</span>.</p>
+          <div class="problem">
+            <span class="label">Бодлого.</span> <span class="m">1 + 3 + 5 + … + 99</span> нийлбэрийг ол.
+            <details><summary>Хариуг харах</summary>
+              <div class="answer">1-ээс 99 хүртэл 50 сондгой тоо байгаа тул нийлбэр нь <span class="m">50² = 2500</span>.</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="lesson" id="invariants">
+          <h2><span class="num">09</span>Инвариант</h2>
+          <div class="key">
+            <strong>Инвариант</strong> гэдэг нь ямар ч үйлдэл хийсэн өөрчлөгддөггүй хэмжигдэхүүн юм.
+            Түүнийг олвол ямар төгсгөл боломжгүйг баталж чадна.
+          </div>
+          <div class="problem">
+            <span class="label">Бодлого.</span> Самбар дээр 1, 2, …, 10 тоонууд бичээстэй. Нэг алхамд дурын хоёр <span class="m">a, b</span> тоог арилгаад оронд нь <span class="m">|a − b|</span>-г бичнэ. 9 алхмын дараа ганц тоо үлдэнэ. Тэр тоо 0 байж болох уу?
+            <details><summary>Хариуг харах</summary>
+              <div class="answer">
+                Алхам бүрт нийлбэр <span class="m">a + b − |a − b| = 2·min(a, b)</span> буюу тэгш тоогоор өөрчлөгдөнө. Иймд <strong>нийлбэрийн тэгш, сондгой чанар хэзээ ч өөрчлөгдөхгүй</strong>.
+                Эхний нийлбэр 55 (сондгой) тул эцэст үлдэх тоо сондгой байна. Тиймээс 0 байж болохгүй.
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section class="lesson" id="backwards">
+          <h2><span class="num">10</span>Ухрааж бодох</h2>
+          <div class="key">
+            Төгсгөлийн үр дүнг мэдэж байвал алхам бүрийг урвуу дарааллаар буцаана: + нь −, × нь ÷ болно.
+          </div>
+          <div class="problem">
+            <span class="label">Бодлого.</span> Би нэг тоо бодоод, түүнийгээ 2 дахин ихэсгэж, 6-г нэмээд, 4-т хуваахад 5 гарлаа. Би ямар тоо бодсон бэ?
+            <details><summary>Хариуг харах</summary>
+              <div class="answer"><span class="m">5 × 4 = 20</span>, <span class="m">20 − 6 = 14</span>, <span class="m">14 ÷ 2 = 7</span>. Бодсон тоо <strong>7</strong>.</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="lesson" id="angles">
+          <h2><span class="num">11</span>Өнцөг</h2>
+          <div class="key">
+            Дэлгэмэл өнцөг = <span class="m">180°</span> · Гурвалжны өнцгүүдийн нийлбэр = <span class="m">180°</span> ·
+            Дөрвөн өнцөгт = <span class="m">360°</span> · n өнцөгтийн өнцгүүдийн нийлбэр = <span class="m">(n − 2) × 180°</span>
+          </div>
+          <div class="problem">
+            <span class="label">Бодлого.</span> Гурвалжны өнцгүүд <span class="m">2 : 3 : 4</span> харьцаатай. Хамгийн их өнцөг нь хэдэн градус вэ?
+            <details><summary>Хариуг харах</summary>
+              <div class="answer"><span class="m">2 + 3 + 4 = 9</span> хэсэг = 180° тул нэг хэсэг нь 20°. Хамгийн их өнцөг: <span class="m">4 × 20° = 80°</span>.</div>
+            </details>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span class="qed"><b>∎</b> Ж. Энх · <span id="yr">2026</span></span>
+      <nav aria-label="Доод цэс">
+        <a href="math.html">Математик</a>
+        <a href="english.html">Англи хэл</a>
+        <a href="bakery.html">Бялуу</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

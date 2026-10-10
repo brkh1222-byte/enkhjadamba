@@ -5,248 +5,261 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Olympiad Math · Enkh Jadamba</title>
   <meta name="description" content="Brief middle-school olympiad math notes with practice problems.">
+  <meta name="theme-color" content="#f8fafd">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=JetBrains+Mono:wght@500;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=DM+Mono:wght@400;500&family=Figtree:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>π</text></svg>">
+  <link rel="alternate" hreflang="mn" href="mn/math.html">
 </head>
-<body>
-  <nav class="nav">
+<body class="page-math">
+  <header class="nav">
     <div class="wrap">
-      <a class="logo" href="index.html">Enkh<span>.</span>J</a>
-      <ul>
-        <li><a class="link" href="index.html"><span class="sym">∅</span>Home</a></li>
-        <li><a class="link" href="math.html" aria-current="page"><span class="sym">∑</span>Math</a></li>
-        <li><a class="link" href="english.html"><span class="sym">Aa</span>Grammar</a></li>
-        <li><a class="link" href="bakery.html"><span class="sym">π</span>Bakery</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <header class="page-hero">
-    <div class="wrap">
-      <div class="tag">// chapter ∑ · middle school level</div>
-      <h1>Olympiad Math</h1>
-      <p>Short notes on the big ideas that show up again and again in math olympiads.
-         Read the key idea, try the problem, <em>then</em> open the answer. No peeking!</p>
-      <nav class="toc" aria-label="Topics">
-        <a href="#strategy">Strategy</a>
-        <a href="#parity">Parity</a>
-        <a href="#divisibility">Divisibility</a>
-        <a href="#gcd">GCD &amp; LCM</a>
-        <a href="#remainders">Remainders</a>
-        <a href="#last-digit">Last digits</a>
-        <a href="#pigeonhole">Pigeonhole</a>
-        <a href="#counting">Counting</a>
-        <a href="#sums">Clever sums</a>
-        <a href="#invariants">Invariants</a>
-        <a href="#backwards">Work backwards</a>
-        <a href="#angles">Angles</a>
-      </nav>
-      <button class="btn small" id="random-problem" type="button">🎲 Random problem</button>
+      <a class="brand" href="index.html"><span class="logo">EJ</span>Enkh Jadamba</a>
+      <div class="nav-right">
+        <nav class="links" aria-label="Main">
+          <a href="index.html">Home</a>
+          <a href="math.html" aria-current="page">Math</a>
+          <a href="english.html">English</a>
+          <a href="bakery.html">Bakery</a>
+        </nav>
+        <a class="lang" href="mn/math.html" hreflang="mn" lang="mn" title="Монгол хэлээр унших">МН <b>Монгол</b></a>
+      </div>
     </div>
   </header>
 
-  <main class="wrap">
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="pill"><span class="dot"></span>Notes · middle school olympiad level</span>
+        <h1>Olympiad <span>math</span></h1>
+        <p class="lede">The big ideas that show up again and again in math olympiads. Read the key idea, try the problem, <em>then</em> open the answer.</p>
+      </div>
+    </section>
 
-    <article class="card lesson" id="strategy">
-      <h2><span class="chip">0</span>How to attack a problem</h2>
-      <ol>
-        <li><strong>Read it twice.</strong> Underline what is given and what is asked.</li>
-        <li><strong>Try small cases.</strong> If it says 100, try 1, 2, 3, 4 first and look for a pattern.</li>
-        <li><strong>Draw a picture</strong> or make a table.</li>
-        <li><strong>Ask: which tool fits?</strong> Odd/even? Remainders? Pigeonhole? Counting?</li>
-        <li><strong>Check your answer</strong> by plugging it back in.</li>
-      </ol>
-    </article>
+    <div class="wrap doc">
+      <aside class="side" aria-label="Topics">
+        <ol>
+          <li><a href="#strategy"><span class="n">00</span>Strategy</a></li>
+          <li><a href="#parity"><span class="n">01</span>Parity</a></li>
+          <li><a href="#divisibility"><span class="n">02</span>Divisibility</a></li>
+          <li><a href="#gcd"><span class="n">03</span>GCD &amp; LCM</a></li>
+          <li><a href="#remainders"><span class="n">04</span>Remainders</a></li>
+          <li><a href="#last-digit"><span class="n">05</span>Last digits</a></li>
+          <li><a href="#pigeonhole"><span class="n">06</span>Pigeonhole</a></li>
+          <li><a href="#counting"><span class="n">07</span>Counting</a></li>
+          <li><a href="#sums"><span class="n">08</span>Clever sums</a></li>
+          <li><a href="#invariants"><span class="n">09</span>Invariants</a></li>
+          <li><a href="#backwards"><span class="n">10</span>Work backwards</a></li>
+          <li><a href="#angles"><span class="n">11</span>Angles</a></li>
+        </ol>
+        <button class="btn small accent" id="random-problem" type="button">Random problem ↻</button>
+      </aside>
+      <div class="content">
+        <section class="lesson" id="strategy">
+          <h2><span class="num">00</span>How to attack a problem</h2>
+          <ol>
+            <li><strong>Read it twice.</strong> Underline what is given and what is asked.</li>
+            <li><strong>Try small cases.</strong> If it says 100, try 1, 2, 3, 4 first and look for a pattern.</li>
+            <li><strong>Draw a picture</strong> or make a table.</li>
+            <li><strong>Ask: which tool fits?</strong> Odd/even? Remainders? Pigeonhole? Counting?</li>
+            <li><strong>Check your answer</strong> by plugging it back in.</li>
+          </ol>
+        </section>
 
-    <article class="card lesson" id="parity">
-      <h2><span class="chip">1</span>Parity (odd &amp; even)</h2>
-      <div class="key">
-        <span class="math">even ± even = even</span> ·
-        <span class="math">odd ± odd = even</span> ·
-        <span class="math">even ± odd = odd</span><br>
-        A sum is odd exactly when it has an <strong>odd number of odd terms</strong>.
-      </div>
-      <p>Parity is great for proving something is <em>impossible</em>.</p>
-      <div class="problem">
-        <span class="label">Problem.</span> Can you pick 5 odd numbers that add up to 50?
-        <details><summary>Show answer</summary>
-          <div class="answer">No. Five odd numbers is an odd number of odd terms, so the sum is odd. 50 is even.</div>
-        </details>
-      </div>
-    </article>
-
-    <article class="card lesson" id="divisibility">
-      <h2><span class="chip">2</span>Divisibility rules</h2>
-      <div class="table-scroll">
-        <table>
-          <tr><th>Divisible by</th><th>Rule</th></tr>
-          <tr><td>2</td><td>last digit is even</td></tr>
-          <tr><td>3</td><td>sum of digits divisible by 3</td></tr>
-          <tr><td>4</td><td>last two digits divisible by 4</td></tr>
-          <tr><td>5</td><td>last digit is 0 or 5</td></tr>
-          <tr><td>6</td><td>divisible by 2 <strong>and</strong> 3</td></tr>
-          <tr><td>8</td><td>last three digits divisible by 8</td></tr>
-          <tr><td>9</td><td>sum of digits divisible by 9</td></tr>
-          <tr><td>10</td><td>last digit is 0</td></tr>
-          <tr><td>11</td><td>alternating sum of digits (+ − + −…) divisible by 11</td></tr>
-        </table>
-      </div>
-      <div class="problem">
-        <span class="label">Problem.</span> Find the digit <span class="math">A</span> so that <span class="math">4A72</span> is divisible by 9.
-        <details><summary>Show answer</summary>
-          <div class="answer"><span class="math">4 + A + 7 + 2 = 13 + A</span> must be a multiple of 9, so <span class="math">A = 5</span>. Check: <span class="math">4572 = 9 × 508</span>. ✓</div>
-        </details>
-      </div>
-    </article>
-
-    <article class="card lesson" id="gcd">
-      <h2><span class="chip">3</span>Primes, GCD &amp; LCM</h2>
-      <div class="key">
-        Every whole number &gt; 1 splits into primes in exactly one way: <span class="math">60 = 2² × 3 × 5</span>.<br>
-        <strong>GCD</strong> = biggest number dividing both. <strong>LCM</strong> = smallest number both divide.<br>
-        <span class="math">GCD(a,b) × LCM(a,b) = a × b</span>
-      </div>
-      <p>Use <strong>GCD</strong> for "split into equal groups". Use <strong>LCM</strong> for "when do things line up again".</p>
-      <div class="problem">
-        <span class="label">Problem.</span> Bus A leaves every 12 minutes and bus B every 18 minutes. Both leave at 8:00. When do they next leave together?
-        <details><summary>Show answer</summary>
-          <div class="answer"><span class="math">12 = 2²·3</span>, <span class="math">18 = 2·3²</span>, so <span class="math">LCM = 2²·3² = 36</span>. They meet again at <strong>8:36</strong>.</div>
-        </details>
-      </div>
-    </article>
-
-    <article class="card lesson" id="remainders">
-      <h2><span class="chip">4</span>Remainders (modular arithmetic)</h2>
-      <div class="key">
-        <span class="math">a ≡ b (mod n)</span> means a and b leave the same remainder when divided by n.<br>
-        You can add, subtract and multiply remainders instead of the huge numbers.
-      </div>
-      <p>Trick: sometimes a remainder of <span class="math">n−1</span> is easier to think of as <span class="math">−1</span>.</p>
-      <div class="problem">
-        <span class="label">Problem.</span> What is the remainder when <span class="math">2¹⁰⁰</span> is divided by 3?
-        <details><summary>Show answer</summary>
-          <div class="answer"><span class="math">2 ≡ −1 (mod 3)</span>, so <span class="math">2¹⁰⁰ ≡ (−1)¹⁰⁰ = 1</span>. The remainder is <strong>1</strong>.</div>
-        </details>
-      </div>
-    </article>
-
-    <article class="card lesson" id="last-digit">
-      <h2><span class="chip">5</span>Last-digit patterns</h2>
-      <div class="key">
-        Last digits of powers repeat in short cycles:<br>
-        <span class="math">2 → 2,4,8,6</span> · <span class="math">3 → 3,9,7,1</span> · <span class="math">7 → 7,9,3,1</span> · <span class="math">8 → 8,4,2,6</span><br>
-        Find where you are in the cycle using the remainder of the exponent.
-      </div>
-      <div class="problem">
-        <span class="label">Problem.</span> What is the last digit of <span class="math">7²⁰²⁶</span>?
-        <details><summary>Show answer</summary>
-          <div class="answer">The cycle 7, 9, 3, 1 has length 4. <span class="math">2026 = 4 × 506 + 2</span>, so we are at position 2: the last digit is <strong>9</strong>.</div>
-        </details>
-      </div>
-    </article>
-
-    <article class="card lesson" id="pigeonhole">
-      <h2><span class="chip">6</span>Pigeonhole principle</h2>
-      <div class="key">
-        If you put more than <span class="math">n</span> pigeons into <span class="math">n</span> holes, some hole gets at least 2 pigeons.
-      </div>
-      <p>Example: among any 13 people, two were born in the same month (13 people, 12 months).</p>
-      <div class="problem">
-        <span class="label">Problem.</span> A dark drawer has red, blue and green socks. How many socks must you take to be <em>sure</em> you have a matching pair?
-        <details><summary>Show answer</summary>
-          <div class="answer"><strong>4.</strong> With 3 socks you might get one of each colour. The 4th sock must match one of them (3 colours = 3 holes).</div>
-        </details>
-      </div>
-    </article>
-
-    <article class="card lesson" id="counting">
-      <h2><span class="chip">7</span>Counting</h2>
-      <div class="key">
-        <strong>Product rule:</strong> if step 1 has <span class="math">a</span> choices and step 2 has <span class="math">b</span>, together there are <span class="math">a × b</span>.<br>
-        <strong>Pairs:</strong> the number of ways to pick 2 from <span class="math">n</span> is <span class="math">n(n−1)/2</span>.
-      </div>
-      <div class="problem">
-        <span class="label">Problem 1.</span> How many 3-digit numbers have only odd digits?
-        <details><summary>Show answer</summary>
-          <div class="answer">Each digit has 5 choices (1, 3, 5, 7, 9): <span class="math">5 × 5 × 5 = 125</span>.</div>
-        </details>
-      </div>
-      <div class="problem">
-        <span class="label">Problem 2.</span> 10 friends each shake hands with every other friend once. How many handshakes?
-        <details><summary>Show answer</summary>
-          <div class="answer"><span class="math">10 × 9 / 2 = 45</span>. (Divide by 2 because A–B and B–A are the same handshake.)</div>
-        </details>
-      </div>
-    </article>
-
-    <article class="card lesson" id="sums">
-      <h2><span class="chip">8</span>Clever sums</h2>
-      <div class="key">
-        <strong>Gauss's trick:</strong> pair first + last.
-        <span class="math">1 + 2 + … + n = n(n+1)/2</span><br>
-        Sum of the first <span class="math">n</span> odd numbers is <span class="math">n²</span>.
-      </div>
-      <p>Example: <span class="math">1 + 2 + … + 100 = 100 × 101 / 2 = 5050</span>.</p>
-      <div class="problem">
-        <span class="label">Problem.</span> Find <span class="math">1 + 3 + 5 + … + 99</span>.
-        <details><summary>Show answer</summary>
-          <div class="answer">There are 50 odd numbers from 1 to 99, so the sum is <span class="math">50² = 2500</span>.</div>
-        </details>
-      </div>
-    </article>
-
-    <article class="card lesson" id="invariants">
-      <h2><span class="chip">9</span>Invariants</h2>
-      <div class="key">
-        An <strong>invariant</strong> is something that never changes, no matter which moves you make.
-        Find it, and you can prove which endings are impossible.
-      </div>
-      <div class="problem">
-        <span class="label">Problem.</span> The numbers 1, 2, …, 10 are on a board. A move: erase any two numbers <span class="math">a, b</span> and write <span class="math">|a − b|</span>. After 9 moves one number is left. Can it be 0?
-        <details><summary>Show answer</summary>
-          <div class="answer">
-            Each move changes the total by <span class="math">a + b − |a − b| = 2·min(a,b)</span>, an even number. So the <strong>parity of the total never changes</strong>.
-            The total starts at 55 (odd), so the final number is odd. It can't be 0.
+        <section class="lesson" id="parity">
+          <h2><span class="num">01</span>Parity (odd &amp; even)</h2>
+          <div class="key">
+            <span class="m">even ± even = even</span> ·
+            <span class="m">odd ± odd = even</span> ·
+            <span class="m">even ± odd = odd</span><br>
+            A sum is odd exactly when it has an <strong>odd number of odd terms</strong>.
           </div>
-        </details>
-      </div>
-    </article>
+          <p>Parity is great for proving something is <em>impossible</em>.</p>
+          <div class="problem">
+            <span class="label">Problem.</span> Can you pick 5 odd numbers that add up to 50?
+            <details><summary>Show answer</summary>
+              <div class="answer">No. Five odd numbers is an odd number of odd terms, so the sum is odd. 50 is even.</div>
+            </details>
+          </div>
+        </section>
 
-    <article class="card lesson" id="backwards">
-      <h2><span class="chip">10</span>Working backwards</h2>
-      <div class="key">
-        If you know the <em>end</em>, undo each step in reverse order: + becomes −, × becomes ÷.
-      </div>
-      <div class="problem">
-        <span class="label">Problem.</span> I think of a number, double it, add 6, then divide by 4. I get 5. What was my number?
-        <details><summary>Show answer</summary>
-          <div class="answer"><span class="math">5 × 4 = 20</span>, <span class="math">20 − 6 = 14</span>, <span class="math">14 ÷ 2 = 7</span>. The number is <strong>7</strong>.</div>
-        </details>
-      </div>
-    </article>
+        <section class="lesson" id="divisibility">
+          <h2><span class="num">02</span>Divisibility rules</h2>
+          <div class="table-scroll">
+            <table>
+              <tr><th>Divisible by</th><th>Rule</th></tr>
+              <tr><td>2</td><td>last digit is even</td></tr>
+              <tr><td>3</td><td>sum of digits divisible by 3</td></tr>
+              <tr><td>4</td><td>last two digits divisible by 4</td></tr>
+              <tr><td>5</td><td>last digit is 0 or 5</td></tr>
+              <tr><td>6</td><td>divisible by 2 <strong>and</strong> 3</td></tr>
+              <tr><td>8</td><td>last three digits divisible by 8</td></tr>
+              <tr><td>9</td><td>sum of digits divisible by 9</td></tr>
+              <tr><td>10</td><td>last digit is 0</td></tr>
+              <tr><td>11</td><td>alternating sum of digits (+ − + −…) divisible by 11</td></tr>
+            </table>
+          </div>
+          <div class="problem">
+            <span class="label">Problem.</span> Find the digit <span class="m">A</span> so that <span class="m">4A72</span> is divisible by 9.
+            <details><summary>Show answer</summary>
+              <div class="answer"><span class="m">4 + A + 7 + 2 = 13 + A</span> must be a multiple of 9, so <span class="m">A = 5</span>. Check: <span class="m">4572 = 9 × 508</span>. ✓</div>
+            </details>
+          </div>
+        </section>
 
-    <article class="card lesson" id="angles">
-      <h2><span class="chip">11</span>Angles</h2>
-      <div class="key">
-        Straight line = <span class="math">180°</span> · Triangle angles sum to <span class="math">180°</span> ·
-        Quadrilateral = <span class="math">360°</span> · Polygon with n sides = <span class="math">(n − 2) × 180°</span>
-      </div>
-      <div class="problem">
-        <span class="label">Problem.</span> The angles of a triangle are in the ratio <span class="math">2 : 3 : 4</span>. What is the largest angle?
-        <details><summary>Show answer</summary>
-          <div class="answer"><span class="math">2 + 3 + 4 = 9</span> parts = 180°, so one part is 20°. Largest: <span class="math">4 × 20° = 80°</span>.</div>
-        </details>
-      </div>
-    </article>
+        <section class="lesson" id="gcd">
+          <h2><span class="num">03</span>Primes, GCD &amp; LCM</h2>
+          <div class="key">
+            Every whole number &gt; 1 splits into primes in exactly one way: <span class="m">60 = 2² × 3 × 5</span>.<br>
+            <strong>GCD</strong> = biggest number dividing both. <strong>LCM</strong> = smallest number both divide.<br>
+            <span class="m">GCD(a,b) × LCM(a,b) = a × b</span>
+          </div>
+          <p>Use <strong>GCD</strong> for "split into equal groups". Use <strong>LCM</strong> for "when do things line up again".</p>
+          <div class="problem">
+            <span class="label">Problem.</span> Bus A leaves every 12 minutes and bus B every 18 minutes. Both leave at 8:00. When do they next leave together?
+            <details><summary>Show answer</summary>
+              <div class="answer"><span class="m">12 = 2²·3</span>, <span class="m">18 = 2·3²</span>, so <span class="m">LCM = 2²·3² = 36</span>. They meet again at <strong>8:36</strong>.</div>
+            </details>
+          </div>
+        </section>
 
+        <section class="lesson" id="remainders">
+          <h2><span class="num">04</span>Remainders (modular arithmetic)</h2>
+          <div class="key">
+            <span class="m">a ≡ b (mod n)</span> means a and b leave the same remainder when divided by n.<br>
+            You can add, subtract and multiply remainders instead of the huge numbers.
+          </div>
+          <p>Trick: sometimes a remainder of <span class="m">n−1</span> is easier to think of as <span class="m">−1</span>.</p>
+          <div class="problem">
+            <span class="label">Problem.</span> What is the remainder when <span class="m">2¹⁰⁰</span> is divided by 3?
+            <details><summary>Show answer</summary>
+              <div class="answer"><span class="m">2 ≡ −1 (mod 3)</span>, so <span class="m">2¹⁰⁰ ≡ (−1)¹⁰⁰ = 1</span>. The remainder is <strong>1</strong>.</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="lesson" id="last-digit">
+          <h2><span class="num">05</span>Last-digit patterns</h2>
+          <div class="key">
+            Last digits of powers repeat in short cycles:<br>
+            <span class="m">2 → 2,4,8,6</span> · <span class="m">3 → 3,9,7,1</span> · <span class="m">7 → 7,9,3,1</span> · <span class="m">8 → 8,4,2,6</span><br>
+            Find where you are in the cycle using the remainder of the exponent.
+          </div>
+          <div class="problem">
+            <span class="label">Problem.</span> What is the last digit of <span class="m">7²⁰²⁶</span>?
+            <details><summary>Show answer</summary>
+              <div class="answer">The cycle 7, 9, 3, 1 has length 4. <span class="m">2026 = 4 × 506 + 2</span>, so we are at position 2: the last digit is <strong>9</strong>.</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="lesson" id="pigeonhole">
+          <h2><span class="num">06</span>Pigeonhole principle</h2>
+          <div class="key">
+            If you put more than <span class="m">n</span> pigeons into <span class="m">n</span> holes, some hole gets at least 2 pigeons.
+          </div>
+          <p>Example: among any 13 people, two were born in the same month (13 people, 12 months).</p>
+          <div class="problem">
+            <span class="label">Problem.</span> A dark drawer has red, blue and green socks. How many socks must you take to be <em>sure</em> you have a matching pair?
+            <details><summary>Show answer</summary>
+              <div class="answer"><strong>4.</strong> With 3 socks you might get one of each colour. The 4th sock must match one of them (3 colours = 3 holes).</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="lesson" id="counting">
+          <h2><span class="num">07</span>Counting</h2>
+          <div class="key">
+            <strong>Product rule:</strong> if step 1 has <span class="m">a</span> choices and step 2 has <span class="m">b</span>, together there are <span class="m">a × b</span>.<br>
+            <strong>Pairs:</strong> the number of ways to pick 2 from <span class="m">n</span> is <span class="m">n(n−1)/2</span>.
+          </div>
+          <div class="problem">
+            <span class="label">Problem 1.</span> How many 3-digit numbers have only odd digits?
+            <details><summary>Show answer</summary>
+              <div class="answer">Each digit has 5 choices (1, 3, 5, 7, 9): <span class="m">5 × 5 × 5 = 125</span>.</div>
+            </details>
+          </div>
+          <div class="problem">
+            <span class="label">Problem 2.</span> 10 friends each shake hands with every other friend once. How many handshakes?
+            <details><summary>Show answer</summary>
+              <div class="answer"><span class="m">10 × 9 / 2 = 45</span>. (Divide by 2 because A–B and B–A are the same handshake.)</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="lesson" id="sums">
+          <h2><span class="num">08</span>Clever sums</h2>
+          <div class="key">
+            <strong>Gauss's trick:</strong> pair first + last.
+            <span class="m">1 + 2 + … + n = n(n+1)/2</span><br>
+            Sum of the first <span class="m">n</span> odd numbers is <span class="m">n²</span>.
+          </div>
+          <p>Example: <span class="m">1 + 2 + … + 100 = 100 × 101 / 2 = 5050</span>.</p>
+          <div class="problem">
+            <span class="label">Problem.</span> Find <span class="m">1 + 3 + 5 + … + 99</span>.
+            <details><summary>Show answer</summary>
+              <div class="answer">There are 50 odd numbers from 1 to 99, so the sum is <span class="m">50² = 2500</span>.</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="lesson" id="invariants">
+          <h2><span class="num">09</span>Invariants</h2>
+          <div class="key">
+            An <strong>invariant</strong> is something that never changes, no matter which moves you make.
+            Find it, and you can prove which endings are impossible.
+          </div>
+          <div class="problem">
+            <span class="label">Problem.</span> The numbers 1, 2, …, 10 are on a board. A move: erase any two numbers <span class="m">a, b</span> and write <span class="m">|a − b|</span>. After 9 moves one number is left. Can it be 0?
+            <details><summary>Show answer</summary>
+              <div class="answer">
+                Each move changes the total by <span class="m">a + b − |a − b| = 2·min(a,b)</span>, an even number. So the <strong>parity of the total never changes</strong>.
+                The total starts at 55 (odd), so the final number is odd. It can't be 0.
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section class="lesson" id="backwards">
+          <h2><span class="num">10</span>Working backwards</h2>
+          <div class="key">
+            If you know the <em>end</em>, undo each step in reverse order: + becomes −, × becomes ÷.
+          </div>
+          <div class="problem">
+            <span class="label">Problem.</span> I think of a number, double it, add 6, then divide by 4. I get 5. What was my number?
+            <details><summary>Show answer</summary>
+              <div class="answer"><span class="m">5 × 4 = 20</span>, <span class="m">20 − 6 = 14</span>, <span class="m">14 ÷ 2 = 7</span>. The number is <strong>7</strong>.</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="lesson" id="angles">
+          <h2><span class="num">11</span>Angles</h2>
+          <div class="key">
+            Straight line = <span class="m">180°</span> · Triangle angles sum to <span class="m">180°</span> ·
+            Quadrilateral = <span class="m">360°</span> · Polygon with n sides = <span class="m">(n − 2) × 180°</span>
+          </div>
+          <div class="problem">
+            <span class="label">Problem.</span> The angles of a triangle are in the ratio <span class="m">2 : 3 : 4</span>. What is the largest angle?
+            <details><summary>Show answer</summary>
+              <div class="answer"><span class="m">2 + 3 + 4 = 9</span> parts = 180°, so one part is 20°. Largest: <span class="m">4 × 20° = 80°</span>.</div>
+            </details>
+          </div>
+        </section>
+      </div>
+    </div>
   </main>
 
   <footer>
     <div class="wrap">
-      Made with <span class="math">∞</span> curiosity by Enkh Jadamba · <span class="math" id="year"></span>
+      <span class="qed"><b>∎</b> Enkh Jadamba · <span id="yr">2026</span></span>
+      <nav aria-label="Footer">
+        <a href="math.html">Math</a>
+        <a href="english.html">English</a>
+        <a href="bakery.html">Bakery</a>
+      </nav>
     </div>
   </footer>
 

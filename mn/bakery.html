@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Бялуу · Ж. Энх</title>
+  <meta name="description" content="Энхийн бялууны булан: дуртай жор, жигнэх ажлын математик.">
+  <meta name="theme-color" content="#f8fafd">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="alternate" hreflang="en" href="../bakery.html">
+</head>
+<body class="page-bakery">
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="logo">ЖЭ</span>Ж. Энх</a>
+      <div class="nav-right">
+        <nav class="links" aria-label="Үндсэн цэс">
+          <a href="index.html">Нүүр</a>
+          <a href="math.html">Математик</a>
+          <a href="english.html">Англи хэл</a>
+          <a href="bakery.html" aria-current="page">Бялуу</a>
+        </nav>
+        <a class="lang" href="../bakery.html" hreflang="en" lang="en" title="Read in English">EN <b>English</b></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="pill"><span class="dot"></span>Бялуу · π r² = хэр их бялуу гарахыг заана</span>
+        <h1>Энхийн <span>бялуу</span></h1>
+        <p class="lede">Жигнэх бол идэж болдог математик: бутархай, харьцаа, температур, хугацаа.</p>
+      </div>
+    </section>
+
+    <div class="wrap bakery-grid">
+      <section class="lesson" id="recipe">
+        <h2><span class="num">01</span>Миний дуртай жор</h2>
+        <div class="recipe">
+          <div>
+            <h3>Ванилтай бисквит</h3>
+            <p>Нууц нь тэнцүү жин: цөцгийн тос, элсэн чихэр, гурил, өндөгний харьцаа <span class="m">1 : 1 : 1 : 1</span>.
+              Бялууны тоог өөрчлөхөд бүх орцын хэмжээ дагаж өөрчлөгдөнө.</p>
+            <div class="scaler">
+              <button class="chip" type="button" data-step="-0.5" aria-label="Цөөн бялуу">−</button>
+              <span class="n" id="scale" aria-live="polite">1</span>
+              <button class="chip" type="button" data-step="0.5" aria-label="Олон бялуу">+</button>
+              <span style="color: var(--muted)">бялуу</span>
+            </div>
+            <div class="table-scroll">
+              <table id="ingredients">
+                <tr><th>Орц</th><th>Хэмжээ</th></tr>
+                <tr data-amount="200" data-unit=" г"><td>Цөцгийн тос (зөөлөрсөн)</td><td></td></tr>
+                <tr data-amount="200" data-unit=" г"><td>Элсэн чихэр</td><td></td></tr>
+                <tr data-amount="200" data-unit=" г"><td>Гурил</td><td></td></tr>
+                <tr data-amount="2" data-unit=" цайны халбага"><td>Жигд нунтаг</td><td></td></tr>
+                <tr data-amount="4" data-unit=" ширхэг"><td>Өндөг</td><td></td></tr>
+                <tr data-amount="1" data-unit=" цайны халбага"><td>Ванилийн ханд</td><td></td></tr>
+                <tr data-amount="2" data-unit=" хоолны халбага"><td>Сүү</td><td></td></tr>
+              </table>
+            </div>
+          </div>
+          <div>
+            <h3>Хийх арга</h3>
+            <ol class="steps">
+              <li><span>Зуухаа 180 °C-т халааж, 20 см-ийн хоёр дугуй хэвэнд жигнэх цаас дэвсэнэ. <em>Зуухтай ажиллахдаа томчуудаас тусламж аваарай!</em></span></li>
+              <li><span>Цөцгийн тос, элсэн чихрээ цайвар өнгөтэй, хөөсөрхөг болтол хутгана.</span></li>
+              <li><span>Өндгөө нэг нэгээр нь нэмж хутгаад, дараа нь ванилийн хандаа хийнэ.</span></li>
+              <li><span>Жигд нунтагтай хольсон гурилаа зөөлөн хутгаж нэмээд, сүүгээ хийнэ.</span></li>
+              <li><span>Зуурмагаа хоёр хэвэнд тэнцүү хуваана. Жинлээд яг 50% болгоорой.</span></li>
+              <li><span>20–25 минут жигнэнэ. Модон шорлог хатгаад цэвэр гарвал болсон байна. Хөргөөд, дунд нь чанамал, цөцгий түрхэнэ.</span></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="lesson" id="kitchen-math">
+        <h2><span class="num">02</span>Гал тогоон дахь математик</h2>
+        <div class="mini-cards">
+          <div class="card bakery">
+            <span class="icon">(12/10)² = 1,44</span>
+            <h3>Том хэв, их бялуу</h3>
+            <p>Хэвний талбай π r². 20 см-ийн хэвээс 24 см-ийн хэв рүү шилжихэд 1,44 дахин их зуурмаг хэрэгтэй: 20% биш, 44%-иар илүү.</p>
+          </div>
+          <div class="card math">
+            <span class="icon">4 × 2 = 8</span>
+            <h3>3 зүсэлтээр 8 хэсэг</h3>
+            <p>Дээрээс нь загалмай хэлбэрээр 2 удаа зүсэхэд 4 хэсэг болно. Дундуур нь хэвтээ 1 удаа зүсэхэд хэсэг бүр 2 давхар болно.</p>
+          </div>
+          <div class="card english">
+            <span class="icon">3/4 × 1/2 = 3/8</span>
+            <h3>Хаа сайгүй бутархай</h3>
+            <p>3/4 аяга элсэн чихэртэй жорыг хагасалбал 3/8 аяга хэрэгтэй. Хэмжих аяга бол бутархайн дасгал юм.</p>
+          </div>
+          <div class="card sun">
+            <span class="icon">180 °C</span>
+            <h3>Халуун ба хугацаа</h3>
+            <p>Хэт халуун бол дотор нь болохоос өмнө гадна тал нь түлэгдэнэ. Жигнэх бол температур, хугацааны тэнцвэр.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="lesson" id="gallery">
+        <h2><span class="num">03</span>Миний жигнэсэн бялуунууд</h2>
+        <div class="soon">
+          <b>Зураг удахгүй орно</b>
+          <span>Зуухнаас гарах дараагийн бялуу энд байрлана.</span>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span class="qed"><b>∎</b> Ж. Энх · <span id="yr">2026</span></span>
+      <nav aria-label="Доод цэс">
+        <a href="math.html">Математик</a>
+        <a href="english.html">Англи хэл</a>
+        <a href="bakery.html">Бялуу</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
